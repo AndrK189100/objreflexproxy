@@ -8,7 +8,6 @@ test('Charaster constructor check if passed name=', () => {
   expect(new Character('sss').name).toBe('sss');
 });
 
-
 test('Charaster levelUp method', () => {
   const pers = new Character('sss');
   pers.attack = 10;

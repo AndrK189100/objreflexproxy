@@ -1,5 +1,6 @@
 {
-  "name": "ajs",
+  "name": "orf",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -40,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndrK189100/oop.git"
+    "url": "git+https://github.com/AndrK189100/objreflexproxy.git"
   },
   "bugs": {
-    "url": "https://github.com/AndrK189100/oop/issues"
+    "url": "https://github.com/AndrK189100/objreflexproxy/issues"
   },
-  "homepage": "https://github.com/AndrK189100/oop#readme"
+  "homepage": "https://github.com/AndrK189100/objreflexproxy#readme"
 }

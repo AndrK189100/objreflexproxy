@@ -11,6 +11,8 @@
       "LabeledStatement",
       "WithStatement"
     ],
-    "no-new": "off"
+    "no-new": "off",
+    "no-console": "off",
+    "import/extensions": ["off"]
   }
 }
