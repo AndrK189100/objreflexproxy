@@ -1,37 +1,16 @@
 export function orderByProps(obj, order) {
-  const propsArray = [];
+  const filtredKeys = Object.keys(obj).filter((prop) => !order.includes(prop));
+  filtredKeys.sort((a, b) => a.localeCompare(b));
+  const sortedKeys = order.concat(filtredKeys);
 
-  for (const prop in obj) {
-    if (prop in obj) {
-      propsArray.push({ key: prop, value: obj[prop] });
-    }
-  }
-
-  propsArray.sort((a, b) => a.key.localeCompare(b.key));
-
-  order.reverse().forEach((element) => {
-    for (let i = 0; i < propsArray.length; i += 1) {
-      if (propsArray[i].key === element) {
-        const tmp = propsArray[i];
-        propsArray.splice(i, 1);
-        propsArray.unshift(tmp);
-        break;
-      }
-    }
-  });
-
-  return propsArray;
+  return sortedKeys.map((key) => ({ key, value: obj[key] }));
 }
 
-export function getSpecialAttack(obj) {
-  const { special } = obj;
-  const tmp = JSON.parse(JSON.stringify(special));
-  tmp.forEach((element) => {
-    if (!('description' in element)) {
-      const el = element;
-      el.description = 'Описание недоступно';
-    }
-  });
-
-  return tmp;
+export function getSpecialAttack({ special }) {
+  return special.map((element) => ({
+    id: element.id,
+    name: element.name,
+    icon: element.icon,
+    description: 'description' in element ? element.description : 'Описание недоступно',
+  }));
 }

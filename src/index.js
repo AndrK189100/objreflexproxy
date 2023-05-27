@@ -7,4 +7,5 @@ const daemon = new Daemon('Azrail');
 
 console.log(orderByProps(daemon, ['name', 'type']));
 console.log('===================================================');
-console.log(getSpecialAttack(daemon));
+const a = getSpecialAttack(daemon);
+console.log(a);
